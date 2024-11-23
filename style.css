@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(148, 0, 211, 1) 0%, rgba(75, 0, 130, 1) 35%, rgba(138, 43, 226, 1) 100%);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    padding: 1.5rem 2rem;
+    background-color: #8a2be2;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #7a1ad1;
+    transform: scale(1.1);
+}
+
+#coin {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem auto;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+#coin div {
+    width: 100%;
+    height: 100%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background-size: cover;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 1s ease;
+}
+
+.headsClass {
+    background-image: url("https://cdn.pixabay.com/photo/2019/04/15/20/42/bitcoin-4130299_1280.png");
+}
+
+.tailsClass {
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/31/15/03/phoenix-1292958_640.png");
+    transform: rotateY(180deg);
+}
+
+.animate-heads {
+    animation: flipHeads 3s ease-out forwards;
+}
+
+.animate-tails {
+    animation: flipTails 3s ease-out forwards;
+}
+
+@keyframes flipHeads {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1800deg);
+    }
+}
+
+@keyframes flipTails {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1620deg);
+    }
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#status {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #8a2be2;
+}
+
+@keyframes backgroundShift {
+    0% {
+        background: linear-gradient(135deg, rgba(148, 0, 211, 1) 0%, rgba(75, 0, 130, 1) 35%, rgba(138, 43, 226, 1) 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, rgba(186, 85, 211, 1) 0%, rgba(138, 43, 226, 1) 35%, rgba(75, 0, 130, 1) 100%);
+    }
+    100% {
+        background: linear-gradient(135deg, rgba(148, 0, 211, 1) 0%, rgba(75, 0, 130, 1) 35%, rgba(138, 43, 226, 1) 100%);
+    }
+}
+
+body {
+    animation: backgroundShift 10s infinite alternate;
+}
